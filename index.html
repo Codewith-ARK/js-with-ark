@@ -68,6 +68,11 @@
                     <li><a href="#day-2" class="link link-hover">Day 2 – Basic Operations & User Input</a></li>
                     <li><a href="#day-3" class="link link-hover">Day 3 – Functions, Scope & Conditions</a></li>
                     <li><a href="#day-5" class="link link-hover">Day 4 – Concatenation & Operators</a></li>
+                    <li><a href="#day-6" class="link link-hover">Day 6 – For Loops & Arrays</a></li>
+                    <li><a href="#day-7" class="link link-hover">Day 7 – While Loops & Number Guessing</a></li>
+                    <li><a href="#day-8" class="link link-hover">Day 8 – Introduction to the DOM</a></li>
+                    <li><a href="#day-9" class="link link-hover">Day 9 – More DOM Selectors</a></li>
+
                     <!-- Future Day links will go here -->
                 </ul>
             </div>
@@ -84,7 +89,10 @@
                             User Input</a></li>
                     <li><a href="#day-3" class="link link-hover">Day 3 – Functions, Scope & Conditions</a></li>
                     <li><a href="#day-5" class="link link-hover">Day 4 – Concatenation & Operators</a></li>
-
+                    <li><a href="#day-6" class="link link-hover">Day 6 – For Loops & Arrays</a></li>
+                    <li><a href="#day-7" class="link link-hover">Day 7 – While Loops & Number Guessing</a></li>
+                    <li><a href="#day-8" class="link link-hover">Day 8 – Introduction to the DOM</a></li>
+                    <li><a href="#day-9" class="link link-hover">Day 9 – More DOM Selectors</a></li>
                     <!-- Add future links here -->
                 </ul>
                 <div class="modal-action">
@@ -307,6 +315,105 @@ console.log(5 !== "5");  // true
 
 // Assignment operator
 let age = 25; // assigns 25 to age
+</code>
+    </pre>
+                </div>
+            </section>
+
+            <!-- Day 6 -->
+            <section id="day-6" class="p-6 bg-base-200 rounded-xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Day 6: For Loops & Arrays</h2>
+
+                <div class="space-y-4 text-base leading-relaxed">
+                    <p>Today we learned about <strong>for loops</strong> — how they work, why they are useful, and how
+                        we can leverage them to iterate through arrays and print their elements.</p>
+                    <p>We explored the loop structure <code>for(initialization; condition; increment)</code> and used it
+                        to display array values in sequence.</p>
+                </div>
+
+                <div class="mt-6">
+                    <p class="font-medium mb-2">Example code:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto">
+<code>// Array of car brands
+let car = ["BMW", "Audi", "Mercedes"];
+
+// Loop through the array and print each element
+for (let i = 0; i &lt; car.length; i++) {
+    console.log(car[i]);
+}
+</code>
+    </pre>
+                </div>
+            </section>
+
+            <!-- Day 7 -->
+            <section id="day-7" class="p-6 bg-base-200 rounded-xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Day 7: While Loops & Number Guessing Game</h2>
+
+                <div class="space-y-4 text-base leading-relaxed">
+                    <p>On this day, we explored the <strong>while loop</strong> — how it runs as long as a condition is
+                        true. We practiced by creating a simple number guessing game where the loop keeps asking for a
+                        guess until the correct number is entered.</p>
+                </div>
+
+                <div class="mt-6">
+                    <p class="font-medium mb-2">Example code:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto">
+<code>let number = 10;
+let guess = parseInt(prompt("Enter a number"));
+
+while (guess != number) {
+    guess = prompt("WRONG! Enter another number");
+}
+
+console.log("Yay!!!");
+</code>
+    </pre>
+                </div>
+            </section>
+
+            <!-- Day 8 -->
+            <section id="day-8" class="p-6 bg-base-200 rounded-xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Day 8: Introduction to the DOM</h2>
+
+                <div class="space-y-4 text-base leading-relaxed">
+                    <p>Today we learned about the <strong>Document Object Model (DOM)</strong> — what it is and why we
+                        use it in JavaScript. The DOM represents the structure of a webpage as objects, allowing us to
+                        manipulate HTML and CSS dynamically.</p>
+                    <p>We explored how to select elements using <code>document.getElementById()</code> and update their
+                        content or styles.</p>
+                </div>
+
+                <div class="mt-6">
+                    <p class="font-medium mb-2">Example code:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto">
+<code>// Select an element by its ID and change its text
+document.getElementById("title").innerText = "Hello DOM!";
+</code>
+    </pre>
+                </div>
+            </section>
+
+            <!-- Day 9 -->
+            <section id="day-9" class="p-6 bg-base-200 rounded-xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Day 9: More DOM Selectors</h2>
+
+                <div class="space-y-4 text-base leading-relaxed">
+                    <p>We extended our DOM knowledge by learning about <code>document.getElementsByClassName()</code>,
+                        which allows us to select multiple elements that share the same class name.</p>
+                    <p>We practiced selecting a single element from the collection using array indexing, then changing
+                        its style. We also briefly explored <code>document.querySelector()</code> for selecting elements
+                        using CSS selectors.</p>
+                </div>
+
+                <div class="mt-6">
+                    <p class="font-medium mb-2">Example code:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto">
+<code>// Change the color of the first element with the class "item"
+document.getElementsByClassName("item")[0].style.color = "red";
+
+// Using querySelector to select the first matching element
+document.querySelector("div#container div.row").style.fontWeight = "bold";
 </code>
     </pre>
                 </div>
