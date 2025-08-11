@@ -72,7 +72,7 @@
                     <li><a href="#day-7" class="link link-hover">Day 7 – While Loops & Number Guessing</a></li>
                     <li><a href="#day-8" class="link link-hover">Day 8 – Introduction to the DOM</a></li>
                     <li><a href="#day-9" class="link link-hover">Day 9 – More DOM Selectors</a></li>
-
+                    <li><a href="#day-10" class="block hover:underline">Day 10: Event Listeners & forEach Loops</a></li>
                     <!-- Future Day links will go here -->
                 </ul>
             </div>
@@ -93,6 +93,7 @@
                     <li><a href="#day-7" class="link link-hover">Day 7 – While Loops & Number Guessing</a></li>
                     <li><a href="#day-8" class="link link-hover">Day 8 – Introduction to the DOM</a></li>
                     <li><a href="#day-9" class="link link-hover">Day 9 – More DOM Selectors</a></li>
+                    <li><a href="#day-10" class="block hover:underline">Day 10: Event Listeners & forEach Loops</a></li>
                     <!-- Add future links here -->
                 </ul>
                 <div class="modal-action">
@@ -416,6 +417,104 @@ document.getElementsByClassName("item")[0].style.color = "red";
 document.querySelector("div#container div.row").style.fontWeight = "bold";
 </code>
     </pre>
+                </div>
+            </section>
+
+            <!-- Day 10 -->
+            <section id="day-10" class="p-6 bg-base-200 rounded-xl shadow-md">
+                <h2 class="text-2xl font-semibold mb-4">Day 10: Event Listeners & forEach Loops</h2>
+
+                <div class="space-y-4 text-base leading-relaxed">
+                    <p>Is din humne <strong>event listeners</strong> aur <strong>forEach</strong> loops cover kiye.
+                        Event listeners se hum kisi element par user actions (jaise <code>click</code>) ka response set
+                        karte hain.
+                        <code>forEach</code> loops arrays ke har element par ek callback run karne ke liye use hotay
+                        hain — aur in dono ko combine karke interactive UI banaya ja sakta hai.
+                    </p>
+
+                    <ul class="list-disc list-inside space-y-1">
+                        <li><strong>Event Listener syntax:</strong>
+                            <code>element.addEventListener("event", handler)</code>
+                        </li>
+                        <li><strong>forEach syntax:</strong> <code>array.forEach(callback)</code></li>
+                        <li><strong>Advanced:</strong> buttons ko loop karke har button par click listener attach karna
+                            aur container ka background change karna.</li>
+                    </ul>
+                </div>
+
+                <div class="mt-6">
+                    <p class="font-medium mb-2">Example — Simple event listener:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto"><code>// Step 1: select button
+const btn = document.querySelector("#container button#changeColor");
+
+// step 2: add event listener
+btn.addEventListener("click", handleClick);
+
+// step 3: add functionality to button.
+function handleClick(){
+    const paragraph = document.querySelector("#container p");
+    paragraph.style.color = "blue";
+}
+</code></pre>
+                </div>
+
+                <div class="mt-4">
+                    <p class="font-medium mb-2">Example — forEach basic:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto"><code>const fruits = ["Bananas", "Strawberries", "Oranges", "Peaches", "Watermelon"];
+
+fruits.forEach(printName);
+
+function printName(name, index){
+    console.log(name);
+}
+</code></pre>
+                </div>
+
+                <div class="mt-4">
+                    <p class="font-medium mb-2">Example — Advanced forEach with event listeners:</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto"><code>// 1: Select elements
+const buttons = document.querySelectorAll(".btn");
+const container = document.querySelector("#container");
+
+// 2: Event Handler
+function handleClick(index) {
+    // Get innerText value for current button
+    const color = buttons[index].innerText;
+    // Set background color of div container
+    container.style.backgroundColor = color;
+}
+
+// 3: ForEach callback
+function changeColor(item, index) {
+  item.addEventListener("click", () => handleClick(index));
+}
+
+// 4: run a foreach loop for every button in buttons
+buttons.forEach(changeColor);
+</code></pre>
+                </div>
+
+                <div class="mt-4">
+                    <p class="font-medium mb-2">Sample HTML (for testing the advanced example):</p>
+                    <pre class="bg-black text-white text-sm rounded-lg p-4 overflow-x-auto"><code>&lt;div id="container"&gt;
+  &lt;div style="height: 150px;"&gt;
+    &lt;p&gt;This is a demo paragraph. Click a button to change container color.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class="btn"&gt;Blue&lt;/button&gt;
+  &lt;button class="btn"&gt;Green&lt;/button&gt;
+  &lt;button class="btn"&gt;Red&lt;/button&gt;
+  &lt;button class="btn"&gt;Pink&lt;/button&gt;
+&lt;/div&gt;
+
+&lt;!-- include your script that contains the advanced forEach example --&gt;
+&lt;script src="forEachAdvanced.js"&gt;&lt;/script&gt;
+</code></pre>
+                </div>
+
+                <div class="mt-6 text-sm text-gray-600">
+                    <p><strong>Tips:</strong> Hamesha DOM elements ko select karne se pehle ensure karein ke DOM load ho
+                        chuka ho. Agar aap external script use kar rahe hain to &lt;script&gt; tag ko page ke end mein
+                        rakhein ya <code>DOMContentLoaded</code> event ka use karein.</p>
                 </div>
             </section>
 
